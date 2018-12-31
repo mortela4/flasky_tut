@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST" action="/interface">
+        <label>Bus (serial port) number:</label>
+        <select type="text" name="bus_num">
+            <option value="0">COM0</option>
+            <option value="1">COM1</option>
+            <option value="2">COM2</option>
+            <option value="3">COM3</option>
+            <option value="4">COM4</option>
+            <option value="5">COM5</option>
+            <option value="6">COM6</option>
+            <option value="7">COM7</option>
+        </select>
+
+        <label>BaudRate:</label>
+          <select type="text" name="baud_rate">
+            <option value="9600">9600<option>
+            <option value="38400">38400</option>
+            <option value="115200">115200</option>
+          </select>
+
+          <input type="submit" value="Add Sensor">
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Custom-1 Config</title>
+</head>
+<body>
+<form method="POST" action="/config">
+    <label>Device:</label>
+    <input type="text" name="name" value="custom-1" readonly="true">
+
+    <label>Alias:</label>
+    <input type="text" name="alias">
+
+    <label>Interface:</label>
+      <select type="text" name="type_name">
+        <option value="spi">SPI</option>
+        <option value="uart">UART</option>
+      </select>
+      <input type="submit" value="Configure Interface">
+</form>
+</body>
+</html>

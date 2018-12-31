@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sensor Creator Page</title>
+</head>
+
+  <body>
+    <h1>Choose Sensor</h1>
+    <form method="POST" action="/">
+      <label>Device:</label>
+      <select type="text" name="name">
+        <option value="sht711">SHT711</option>
+        <option value="tmp82">TMP82</option>
+        <option value="bma280">BMA280</option>
+        <option value="custom-1">Custom-1</option>
+      </select>
+      <input type="submit" value="Configure Sensor">
+    </form>
+
+      <h1>Stored Sensors</h1>
+    <table>
+      {% for sensor in sensor_list %}
+        <tr>
+          <td>
+            Sensor ID:
+            {{sensor.base.uuid}}
+          </td>
+          <td>
+            Sensor Alias:
+            {{sensor.base.alias}}
+          </td>
+          <td>
+            Sensor Device:
+            {{sensor.base.dev_name}}
+          </td>
+          <td>
+            Sensor Interface:
+            {{sensor.base.type_name}}
+          </td>
+          <td>
+            Sensor bus no:
+            {{sensor.base.bus_no}}
+          </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+  </body>
+</html>

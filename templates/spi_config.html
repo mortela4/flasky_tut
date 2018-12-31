@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST" action="/interface">
+        <label>Device:</label>
+        <select type="text" name="bus_num">
+            <option value="0">SPI_0</option>
+            <option value="1">SPI_1</option>
+            <option value="2">SPI_2</option>
+            <option value="3">SPI_3</option>
+        </select>
+
+        <label>SlaveSelect no:</label>
+          <select type="text" name="cs_num">
+            <option value="0">SS_0</option>
+            <option value="1">SS_1</option>
+            <option value="2">SS_2</option>
+            <option value="3">SS_3</option>
+            <option value="4">SS_4</option>
+            <option value="5">SS_5</option>
+            <option value="6">SS_6</option>
+            <option value="7">SS_7</option>
+          </select>
+
+        <label>SCLK-speed:</label>
+          <select type="text" name="clk_speed">
+            <option value="50000">50kHz</option>
+            <option value="1000000">1MHz</option>
+            <option value="4000000">4MHz</option>
+          </select>
+          <input type="submit" value="Add Sensor">
+    </form>
+</body>
+</html>

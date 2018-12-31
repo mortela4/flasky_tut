@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I2C-config</title>
+</head>
+    <body>
+        <form method="POST" action="/interface">
+            <label>Bus no:</label>
+              <select type="text" name="bus_num">
+                <option value="0">I2C_0</option>
+                <option value="1">I2C_1</option>
+                <option value="2">I2C_2</option>
+              </select>
+
+            <label>I2C-address:</label>
+            <input type="text" name="i2c_addr">
+
+            <label>SCK speed:</label>
+              <select type="text" name="clk_speed">
+                <option value="100000">100kHz</option>
+                <option value="400000">400kHz</option>
+                <option value="1000000">1MHz</option>
+              </select>
+
+              <input type="submit" value="Add Sensor">
+        </form>
+    </body>
+</html>
