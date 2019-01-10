@@ -6,8 +6,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 
 
+BROWSER_TYPE = 'firefox'
 webdriver_wait = None
 use_animation = True
+
+#  Test-data:
 sensors = {'sensor_1': {'type': 'sht711', 'iface': 'i2c', 'bnum': '2', 'addr': 78},
            'sensor_2': {'type': 'bma280', 'iface': 'spi', 'bnum': '1', 'cs_num': '6'},
            'sensor_3': {'type': 'tmp82', 'iface': 'i2c', 'bnum': '0', 'addr': 81},
@@ -97,13 +100,17 @@ def config_iface(web_drv=None, sdata=None):
     web_drv.find_element_by_name('add-sensor').click()
 
 
-
 # *************** TEST-LOOP **************************
 if __name__ == "__main__":
     print("Starting test ...")
 
-    d = webdriver.Chrome()
+    if BROWSER_TYPE == 'chrome':
+        d = webdriver.Chrome()
+    else:
+        d = webdriver.Firefox()
+
     webdriver_wait = WebDriverWait(d, 10)  # Wait up to 10sec for page load to complete.
+
     d.get('http://localhost:5000/')
 
     for sensor_name, sensor_data in sensors.items():

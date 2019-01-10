@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 
 
+BROWSER_TYPE = 'firefox'
 use_animation = True
 users = ['Sam Cooke', 'Mistah Nelson', 'John Smith']
 
@@ -13,7 +14,10 @@ def pause(wait=use_animation, time_out=0.5):
 
 
 for user in users:
-    d = webdriver.Chrome()
+    if BROWSER_TYPE == 'chrome':
+        d = webdriver.Chrome()
+    else:
+        d = webdriver.Firefox()
     d.get('http://localhost:5000/')
     #
     d.find_element_by_name('username').send_keys(user)
