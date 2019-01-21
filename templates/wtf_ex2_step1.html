@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WTF ex2: step 1 of 2</title>
+</head>
+
+<body>
+
+    <form action="/" method="POST">
+         <fieldset>
+            <legend>Contact Form</legend>
+                <div>{{ form.username.label }}: {{ form.username }}</div>
+                <div>{{ form.age.label }}: {{ form.age }}</div>
+                <div>{{ form.accept_rules.label }}: {{ form.accept_rules }}</div>
+                <div>{{ form.sub_mittor.label }}: {{ form.sub_mittor }}</div>
+                <!-- various CSRF token handling procedures ... -->
+                <!-- input type="hidden" name="csrf_token" value="{{ csrf_token() }}" -->
+                <!-- {{ form.hidden_tag() }} -->
+                <!-- {{ form.csrf_token }} -->
+         </fieldset>
+      </form>
+
+</body>
+</html>

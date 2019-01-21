@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WTF ex1</title>
+</head>
+
+<body>
+
+    <form action="/" name="reg-form" method="POST">
+         <fieldset>
+            <legend>Contact Form</legend>
+                <div>{{ form.username.label }}: {{ form.username }}</div>
+                <div>{{ form.age.label }}: {{ form.age }}</div>
+                <div>{{ form.accept_rules.label }}: {{ form.accept_rules }}</div>
+                <div>{{ form.sub_mittor.label }}: {{ form.sub_mittor }}</div>
+                {% if form.street_name != None and form.street_number != None %}
+                    <div>{{ form.street_name.label }}: {{ form.street_name }}</div>
+                    <div>{{ form.street_number.label }}: {{ form.street_number }}</div>
+                    <div>{{ form.add_user.label }}: {{ form.add_user }}</div>
+                {% endif %}
+                <!-- input type="hidden" name="csrf_token" value="{{ csrf_token() }}" -->
+                <!-- {{ form.hidden_tag() }} -->
+                <!-- {{ form.csrf_token }} -->
+         </fieldset>
+      </form>
+
+</body>
+</html>
